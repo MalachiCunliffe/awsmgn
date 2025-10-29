@@ -30,7 +30,6 @@ Invoke-WebRequest -Uri $MGNInstallerURL -OutFile $InstallerPath
 
 # Install the AWS MGN agent with specified parameters including session token
 Write-Host "Installing AWS MGN agent with temporary credentials..."
-
 # Silent install, but leave replication OFF
 Start-Process -FilePath $InstallerPath -ArgumentList "--region $AWSRegion --aws-access-key-id $AWSAccessKeyId --aws-secret-access-key $AWSSecretAccessKey --aws-session-token $AWSSessionToken --no-prompt --no-replication" -Wait
 
